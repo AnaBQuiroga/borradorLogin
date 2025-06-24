@@ -144,6 +144,7 @@
             this.Controls.Add(this.lblIngresarCodigo);
             this.Name = "frmIngresoCodigo";
             this.Text = "Código de recuperación";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmIngresoCodigo_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

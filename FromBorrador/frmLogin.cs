@@ -16,6 +16,7 @@ namespace FromBorrador
         List<string> nombres = new List<string> { "Ana", "Natalia", "Ramiro" };
         List<string> contraseñas = new List<string> { "ana222", "nati333", "rami111" };
         List<string> roles = new List<string> { "usuario", "administrador", "administrador" };
+
         int indice;
         public frmLogin()
         {
@@ -57,13 +58,9 @@ namespace FromBorrador
 
             if (rol == "usuario")
             {
-                for (int i = 0; i < nombres.Count; i++)
-                {
-                    indice = i;
-                }
                 txtNombreCorreo.Clear();
                 txtLeeContra.Clear();
-                frmUsuario usuario = new frmUsuario(nombres[indice], correos[indice], contraseñas[indice]);
+                frmUsuario usuario = new frmUsuario();
                 usuario.Show();
                 return;
             } else if (rol == "administrador")
@@ -82,12 +79,6 @@ namespace FromBorrador
         //nombre de usuario o correo electronico
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            string[] nombres = { "Ana", "Natalia", "Ramiro" },
-            correos = { "anaquiroga@gmail.com", "natijacqet@gmail.com", "aguirreramiro@gmail.com" },
-            contraseñas = { "ana222", "nati333", "rami111" },
-            roles = { "usuario", "administrador", "administrador" };
-
-
         }
 
         private void btnOlvidarContra_Click(object sender, EventArgs e)
@@ -97,18 +88,10 @@ namespace FromBorrador
             
             if (recuperar==DialogResult.OK) 
             {
-                for (int i = 0; i < contraseñas.Count; i++) 
-                {
-                    indice = i;
-                    frmIngresoCodigo ingreso = new frmIngresoCodigo(correos, contraseñas);
-                    ingreso.ShowDialog(); //formulario INDEPENDIENTE, showDialog() formulario HIJO
-                }
-                //frmIngresoCodigo ingreso = new frmIngresoCodigo(correos[], contraseñas[]);
-                //ingreso.ShowDialog(); //formulario INDEPENDIENTE, showDialog() formulario HIJO
-                
-
+                frmIngresoCodigo ingreso = new frmIngresoCodigo();
+                ingreso.ShowDialog(); //formulario INDEPENDIENTE, showDialog() formulario HIJO
             }
-            
+
         }
 
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)

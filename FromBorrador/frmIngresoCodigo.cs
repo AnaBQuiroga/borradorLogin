@@ -12,45 +12,70 @@ namespace FromBorrador
 {
     public partial class frmIngresoCodigo : Form
     {
-        List<string> correos, contraseñas;
+        List<string> correos = new List<string> { "anaquiroga@gmail.com", "natijacqet@gmail.com", "aguirreramiro@gmail.com" } ;
+        List<string> contraseñas = new List<string> { "ana222", "nati333", "rami111" };
 
-        public frmIngresoCodigo(List<string> correos, List<string> contraseñas)
+
+        public frmIngresoCodigo()
         {
             InitializeComponent();
             txtCodigo.ReadOnly = true;
             txtNuevaContra.ReadOnly = true;
-            this.contraseñas = contraseñas;
-            this.correos = correos;
+            this.AcceptButton = btnAceptar;
         }
 
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < correos.Count; i++)
+            {
+                if (txtCorreoIngresado.Text == correos[i])
+                {
+                    string contra = "abc123";
+                    if (txtCodigo.Text == contra)
+                    {
+                        MessageBox.Show("Ingrese su nueva contraseña");
+                        txtNuevaContra.Focus();
+                        txtNuevaContra.ReadOnly = false;
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El código ingresado es incorrecto o esta vacío, intente de nuevo.",
+                              "CODIGO",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Asterisk);
+                        if (true)
+                        {
+                            txtCodigo.Clear();
+                            txtCodigo.Focus();
+                            txtCodigo.ReadOnly = false;
+                            return ;
+                        }
+                    }
+                    
+                }
+            }
 
-            string contra = "abc123";
-            if (txtCodigo.Text == contra)
+            DialogResult volver = MessageBox.Show("Debe ingresar el correo para que se le puedo enviar el código",
+                "ATENCIÓN",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning);
+            if (volver == DialogResult.Cancel)
             {
-                MessageBox.Show("Ingrese su nueva contraseña");
-                txtNuevaContra.Focus();
-                txtNuevaContra.ReadOnly = false;
+                this.Close();
             }
-            else
-            {
-                MessageBox.Show("El código ingresado es incorrecto o esta vacío, intente de nuevo");
-                txtCodigo.Clear();
-                return;
-            }
+
         }
 
         private void btnCorreoIngresado_Click(object sender, EventArgs e)
         {
-            string correoIngresado = txtCorreoIngresado.Text;
             for (int i = 0; i < correos.Count; i++)
             {
-                if (!(string.IsNullOrEmpty(txtCorreoIngresado.Text)) && txtCorreoIngresado.Text == correoIngresado)
+                if (!(string.IsNullOrEmpty(txtCorreoIngresado.Text)) && txtCorreoIngresado.Text == correos[i])
                 {
                     MessageBox.Show("Correo valido! Introduzca el código que le fue enviado.",
-                        "CODIGO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        "CORREO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     if (true)
                     {
                         txtCodigo.Focus();
@@ -72,26 +97,41 @@ namespace FromBorrador
 
         private void btnNuevaContraseña_Click(object sender, EventArgs e)
         {
-            string correoIngresado = txtCorreoIngresado.Text;
-            string nuevaContraseña = txtNuevaContra.Text;
 
-            int indice = correos.IndexOf(correoIngresado);
 
-            if ((!string.IsNullOrEmpty(txtCorreoIngresado.Text)) && txtCorreoIngresado.Text == correoIngresado)
+            if (string.IsNullOrEmpty(txtNuevaContra.Text))
             {
-                if (!string.IsNullOrEmpty(txtNuevaContra.Text))
+                MessageBox.Show("Ocurrio un error, intente de nuevo");
+                
+            }
+            else
+            {
+                DialogResult contraCorrecta = MessageBox.Show("La contraseña se modificó correctamente.",
+                    "Éxito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                if (contraCorrecta == DialogResult.OK)
                 {
-                    contraseñas[indice] = txtNuevaContra.Text;
-                    MessageBox.Show("La contraseña se modificó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNuevaContra.ReadOnly = true;
 
                 }
             }
-
-            MessageBox.Show("Ocurrio un error, intente de nuevo");
-            txtNuevaContra.Focus();
+           
         }
-    
-        
+
+        private void frmIngresoCodigo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult cierre = MessageBox.Show("¿Esta seguro que quieres volver al inicio de sesión?",
+                "SALIR",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Asterisk,
+                MessageBoxDefaultButton.Button2);
+
+            if (cierre == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

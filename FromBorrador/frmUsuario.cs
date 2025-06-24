@@ -13,28 +13,36 @@ namespace FromBorrador
 {
     public partial class frmUsuario : Form
     {
-        string nombres, correos, contraseñas;
-        public frmUsuario(string nombre, string correo, string contraseña)
+
+        List<string> nombres = new List<string> {} ;
+        List<string> correos = new List<string> {};
+        List<string> contras = new List<string> {};
+
+        
+        public frmUsuario()
         {
             InitializeComponent();
-            this.nombres = nombre;
-            this.correos = correo;
-            this.contraseñas = contraseña;
 
-            txtNombreUsuario.Text = nombre;
-            txtCorreoUsuario.Text = correo;
-            txtContraUsuario.Text = contraseña;
+
+
+            //txtNombreUsuario.Text = nombres[0];
+            //txtCorreoUsuario.Text = correos[0];
+            //txtContraUsuario.Text = contras[0];
+
             txtNombreUsuario.ReadOnly = true;
             txtCorreoUsuario.ReadOnly = true;
             txtContraUsuario.ReadOnly = true;
-
-            
+           
         }
 
         private void frmUsuario_Load(object sender, EventArgs e)
         {
-
-            
+            nombres.Add ("Ana");
+            correos.Add("anaquiroga@gmail.com");
+            contras.Add("ana222");
+            txtNombreUsuario.Text = nombres[0];
+            txtCorreoUsuario.Text = correos[0];
+            txtContraUsuario.Text = contras[0];
 
         }
 
@@ -54,6 +62,8 @@ namespace FromBorrador
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Ya podes modificar tus datos");
+
             txtNombreUsuario.ReadOnly = false;
             txtCorreoUsuario.ReadOnly = false;
             txtContraUsuario.ReadOnly = false;
@@ -69,11 +79,8 @@ namespace FromBorrador
                 MessageBox.Show("Por favor completa los datos obligatorios", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            nombres = txtNombreUsuario.Text;
-            correos = txtCorreoUsuario.Text;
-            contraseñas = txtContraUsuario.Text;
-
+            
+           
 
             txtNombreUsuario.ReadOnly = true;
             txtCorreoUsuario.ReadOnly = true;
