@@ -12,12 +12,12 @@ namespace FromBorrador
 {
     public partial class frmLogin : Form
     {
-        List<string> correos = new List<string> { "anaquiroga@gmail.com", "natijacqet@gmail.com", "aguirreramiro@gmail.com" };
+        List<string> correos = new List<string> { "anaquiroga@gmail.com", "nati", "aguirreramiro@gmail.com" };
         List<string> nombres = new List<string> { "Ana", "Natalia", "Ramiro" };
         List<string> contraseñas = new List<string> { "ana222", "nati333", "rami111" };
         List<string> roles = new List<string> { "usuario", "administrador", "administrador" };
 
-        int indice;
+        //int indice;
         public frmLogin()
         {
             InitializeComponent();
@@ -61,13 +61,14 @@ namespace FromBorrador
                 txtNombreCorreo.Clear();
                 txtLeeContra.Clear();
                 frmUsuario usuario = new frmUsuario();
-                usuario.Show();
+                usuario.ShowDialog();
                 return;
             } else if (rol == "administrador")
             {
-                MessageBox.Show("Sos ADMINISTRADOR");
                 txtNombreCorreo.Clear();
                 txtLeeContra.Clear();
+                frmAdmin admin = new frmAdmin();
+                admin.ShowDialog();
             } else
             {
                 MessageBox.Show("Verfica los datos ingresados");
@@ -107,6 +108,12 @@ namespace FromBorrador
                 e.Cancel = true;
             }
             
+        }
+
+        private void lblRegistro_Click(object sender, EventArgs e)
+        {
+            frmRegistro registrar = new frmRegistro();
+            registrar.ShowDialog();
         }
     }
 }

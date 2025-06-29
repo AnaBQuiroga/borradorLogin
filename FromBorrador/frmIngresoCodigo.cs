@@ -35,6 +35,7 @@ namespace FromBorrador
                     if (txtCodigo.Text == contra)
                     {
                         MessageBox.Show("Ingrese su nueva contraseña");
+                        txtCodigo.ReadOnly = true;
                         txtNuevaContra.Focus();
                         txtNuevaContra.ReadOnly = false;
                         return;
@@ -78,6 +79,7 @@ namespace FromBorrador
                         "CORREO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     if (true)
                     {
+                        MessageBox.Show("abc123", "Código de recuperación", MessageBoxButtons.OK);
                         txtCodigo.Focus();
                         txtCodigo.ReadOnly = false;
 

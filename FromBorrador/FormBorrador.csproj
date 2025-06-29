@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIngresoCodigo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistro.Designer.cs">
+      <DependentUpon>frmRegistro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,11 +78,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIngresoCodigo.resx">
       <DependentUpon>frmIngresoCodigo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistro.resx">
+      <DependentUpon>frmRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
