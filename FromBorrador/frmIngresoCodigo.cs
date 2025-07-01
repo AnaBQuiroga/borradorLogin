@@ -21,52 +21,36 @@ namespace FromBorrador
             InitializeComponent();
             txtCodigo.ReadOnly = true;
             txtNuevaContra.ReadOnly = true;
-            this.AcceptButton = btnAceptar;
+            this.AcceptButton = btnCorreoIngresado;
         }
 
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < correos.Count; i++)
+
+            string contra = "abc123";
+            if (txtCodigo.Text == contra)
             {
-                if (txtCorreoIngresado.Text == correos[i])
+                //MessageBox.Show("Ingrese su nueva contraseña");
+                txtCodigo.ReadOnly = true;
+                txtNuevaContra.Focus();
+                txtNuevaContra.ReadOnly = false;
+                return;
+            }
+            else
+            {
+                MessageBox.Show("El código ingresado es incorrecto o esta vacío, intente de nuevo.",
+                      "CODIGO",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Asterisk);
+                if (true)
                 {
-                    string contra = "abc123";
-                    if (txtCodigo.Text == contra)
-                    {
-                        MessageBox.Show("Ingrese su nueva contraseña");
-                        txtCodigo.ReadOnly = true;
-                        txtNuevaContra.Focus();
-                        txtNuevaContra.ReadOnly = false;
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("El código ingresado es incorrecto o esta vacío, intente de nuevo.",
-                              "CODIGO",
-                              MessageBoxButtons.OK,
-                              MessageBoxIcon.Asterisk);
-                        if (true)
-                        {
-                            txtCodigo.Clear();
-                            txtCodigo.Focus();
-                            txtCodigo.ReadOnly = false;
-                            return ;
-                        }
-                    }
-                    
+                    txtCodigo.Clear();
+                    txtCodigo.Focus();
+                    txtCodigo.ReadOnly = true;
+                    return;
                 }
             }
-
-            DialogResult volver = MessageBox.Show("Debe ingresar el correo para que se le puedo enviar el código",
-                "ATENCIÓN",
-                MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Warning);
-            if (volver == DialogResult.Cancel)
-            {
-                this.Close();
-            }
-
         }
 
         private void btnCorreoIngresado_Click(object sender, EventArgs e)
@@ -86,10 +70,10 @@ namespace FromBorrador
                     }
                     return;
 
-                }
+            }
 
             }
-            MessageBox.Show("Correo invalido! Intente nuevamente",
+            MessageBox.Show("Correo invalido! Intente nuevamente, debe ingresar el correo para que se le puedo enviar el código",
                     "Ocurrio un problema",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);

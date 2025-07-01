@@ -62,7 +62,7 @@ namespace FromBorrador
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Ya podes modificar tus datos");
+            //MessageBox.Show("Ya podes modificar tus datos");
 
             txtNombreUsuario.ReadOnly = false;
             txtCorreoUsuario.ReadOnly = false;

@@ -40,13 +40,15 @@
             this.lblConfirmarContra = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.lblVolverInicio = new System.Windows.Forms.Label();
+            this.chkTerminosCond = new System.Windows.Forms.CheckBox();
+            this.lklTerminosCond = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblNombreApellido
             // 
             this.lblNombreApellido.AutoSize = true;
             this.lblNombreApellido.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreApellido.Location = new System.Drawing.Point(42, 57);
+            this.lblNombreApellido.Location = new System.Drawing.Point(42, 45);
             this.lblNombreApellido.Name = "lblNombreApellido";
             this.lblNombreApellido.Size = new System.Drawing.Size(122, 17);
             this.lblNombreApellido.TabIndex = 0;
@@ -55,7 +57,7 @@
             // txtNombreApellido
             // 
             this.txtNombreApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtNombreApellido.Location = new System.Drawing.Point(202, 53);
+            this.txtNombreApellido.Location = new System.Drawing.Point(202, 41);
             this.txtNombreApellido.Name = "txtNombreApellido";
             this.txtNombreApellido.Size = new System.Drawing.Size(100, 20);
             this.txtNombreApellido.TabIndex = 1;
@@ -63,7 +65,7 @@
             // txtDNI
             // 
             this.txtDNI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtDNI.Location = new System.Drawing.Point(203, 92);
+            this.txtDNI.Location = new System.Drawing.Point(203, 80);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(100, 20);
             this.txtDNI.TabIndex = 3;
@@ -72,7 +74,7 @@
             // 
             this.lblDNI.AutoSize = true;
             this.lblDNI.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDNI.Location = new System.Drawing.Point(42, 92);
+            this.lblDNI.Location = new System.Drawing.Point(42, 80);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(35, 17);
             this.lblDNI.TabIndex = 2;
@@ -81,7 +83,7 @@
             // txtCorreo
             // 
             this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCorreo.Location = new System.Drawing.Point(202, 131);
+            this.txtCorreo.Location = new System.Drawing.Point(202, 119);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(100, 20);
             this.txtCorreo.TabIndex = 5;
@@ -90,7 +92,7 @@
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.Location = new System.Drawing.Point(43, 131);
+            this.lblCorreo.Location = new System.Drawing.Point(43, 119);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(119, 17);
             this.lblCorreo.TabIndex = 4;
@@ -99,7 +101,7 @@
             // txtContraseña
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtContraseña.Location = new System.Drawing.Point(203, 172);
+            this.txtContraseña.Location = new System.Drawing.Point(203, 160);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(100, 20);
             this.txtContraseña.TabIndex = 7;
@@ -108,7 +110,7 @@
             // 
             this.lblContra.AutoSize = true;
             this.lblContra.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContra.Location = new System.Drawing.Point(42, 172);
+            this.lblContra.Location = new System.Drawing.Point(42, 160);
             this.lblContra.Name = "lblContra";
             this.lblContra.Size = new System.Drawing.Size(75, 17);
             this.lblContra.TabIndex = 6;
@@ -117,7 +119,7 @@
             // txtConfirmarContra
             // 
             this.txtConfirmarContra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtConfirmarContra.Location = new System.Drawing.Point(202, 212);
+            this.txtConfirmarContra.Location = new System.Drawing.Point(202, 200);
             this.txtConfirmarContra.Name = "txtConfirmarContra";
             this.txtConfirmarContra.Size = new System.Drawing.Size(100, 20);
             this.txtConfirmarContra.TabIndex = 9;
@@ -126,7 +128,7 @@
             // 
             this.lblConfirmarContra.AutoSize = true;
             this.lblConfirmarContra.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmarContra.Location = new System.Drawing.Point(42, 212);
+            this.lblConfirmarContra.Location = new System.Drawing.Point(42, 200);
             this.lblConfirmarContra.Name = "lblConfirmarContra";
             this.lblConfirmarContra.Size = new System.Drawing.Size(140, 17);
             this.lblConfirmarContra.TabIndex = 8;
@@ -134,33 +136,62 @@
             // 
             // btnRegistrar
             // 
+            this.btnRegistrar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegistrar.Location = new System.Drawing.Point(203, 278);
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRegistrar.Location = new System.Drawing.Point(12, 318);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
-            this.btnRegistrar.TabIndex = 10;
+            this.btnRegistrar.Size = new System.Drawing.Size(334, 44);
+            this.btnRegistrar.TabIndex = 11;
             this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // lblVolverInicio
             // 
             this.lblVolverInicio.AutoSize = true;
+            this.lblVolverInicio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblVolverInicio.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVolverInicio.ForeColor = System.Drawing.Color.Teal;
-            this.lblVolverInicio.Location = new System.Drawing.Point(203, 326);
+            this.lblVolverInicio.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblVolverInicio.Location = new System.Drawing.Point(117, 371);
             this.lblVolverInicio.Name = "lblVolverInicio";
-            this.lblVolverInicio.Size = new System.Drawing.Size(116, 17);
-            this.lblVolverInicio.TabIndex = 11;
+            this.lblVolverInicio.Size = new System.Drawing.Size(118, 19);
+            this.lblVolverInicio.TabIndex = 12;
             this.lblVolverInicio.Text = "¿Ya tenés cuenta?";
             this.lblVolverInicio.Click += new System.EventHandler(this.lblVolverInicio_Click);
+            // 
+            // chkTerminosCond
+            // 
+            this.chkTerminosCond.Location = new System.Drawing.Point(85, 281);
+            this.chkTerminosCond.Name = "chkTerminosCond";
+            this.chkTerminosCond.Size = new System.Drawing.Size(13, 27);
+            this.chkTerminosCond.TabIndex = 10;
+            this.chkTerminosCond.UseVisualStyleBackColor = true;
+            // 
+            // lklTerminosCond
+            // 
+            this.lklTerminosCond.ActiveLinkColor = System.Drawing.Color.Navy;
+            this.lklTerminosCond.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lklTerminosCond.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklTerminosCond.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lklTerminosCond.Location = new System.Drawing.Point(104, 279);
+            this.lklTerminosCond.Name = "lklTerminosCond";
+            this.lklTerminosCond.Size = new System.Drawing.Size(170, 26);
+            this.lklTerminosCond.TabIndex = 12;
+            this.lklTerminosCond.TabStop = true;
+            this.lklTerminosCond.Text = "Términos y Condiciones";
+            this.lklTerminosCond.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lklTerminosCond.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklTerminosCond_LinkClicked);
             // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(369, 380);
+            this.ClientSize = new System.Drawing.Size(369, 409);
+            this.Controls.Add(this.lklTerminosCond);
+            this.Controls.Add(this.chkTerminosCond);
             this.Controls.Add(this.lblVolverInicio);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtConfirmarContra);
@@ -194,5 +225,7 @@
         private System.Windows.Forms.Label lblConfirmarContra;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label lblVolverInicio;
+        private System.Windows.Forms.CheckBox chkTerminosCond;
+        private System.Windows.Forms.LinkLabel lklTerminosCond;
     }
 }

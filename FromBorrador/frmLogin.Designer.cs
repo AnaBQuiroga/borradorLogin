@@ -117,7 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(335, 305);
+            this.ClientSize = new System.Drawing.Size(320, 302);
             this.Controls.Add(this.lblRegistro);
             this.Controls.Add(this.lblContra);
             this.Controls.Add(this.lblNombre);

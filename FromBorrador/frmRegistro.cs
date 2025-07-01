@@ -15,6 +15,7 @@ namespace FromBorrador
         public frmRegistro()
         {
             InitializeComponent();
+            chkTerminosCond.Enabled = false;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -54,12 +55,28 @@ namespace FromBorrador
                 return;
             }
 
+            if (!chkTerminosCond.Checked)
+            {
+                MessageBox.Show("Debe aceptar los términos y condiciones para continuar", 
+                    "ERROR", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+
             this.Close();
         }
 
         private void lblVolverInicio_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lklTerminosCond_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("TERMINOS Y CONDICIONES", "Términos y condiciones");
+            chkTerminosCond.Enabled = true;
         }
     }
 }
